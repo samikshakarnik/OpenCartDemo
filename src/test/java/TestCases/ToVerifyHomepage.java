@@ -17,7 +17,7 @@ public class ToVerifyHomepage extends BaseClass {
 	@Test(priority = -1)
 	public void toVerifyHeader() throws Exception {
 		
-		log = LogManager.getLogger(ToVerifyHomepage.class.getName());
+		log = LogManager.getLogger(ToVerifyHomepage.class);
 		HomePage homepage = new HomePage(driver);
 		System.out.println("Current Currency: " + homepage.currencytext().getText());
 		log.info("Current currency is capturing");
@@ -112,12 +112,16 @@ public class ToVerifyHomepage extends BaseClass {
 			Thread.sleep(2000);
 			homepage.carouselNext().click();
 		}
+		
+		CommonUtilities.takeSS(driver, Constants.destination);
 
 		CommonUtilities.actionClass(driver, homepage.carousel());
 		for (int i = 0; i <= Constants.carouselNum; i++) {
 			Thread.sleep(2000);
 			homepage.carouselPrev().click();
 		}
+		
+		CommonUtilities.takeSS(driver, Constants.destination);
 
 	}
 

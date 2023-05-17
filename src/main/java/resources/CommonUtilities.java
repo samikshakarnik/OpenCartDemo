@@ -39,8 +39,8 @@ public class CommonUtilities extends BaseClass {
 		
 		SoftAssert softassert = new SoftAssert();
 		String actual = act;
-		//String expected = expt;
-		softassert.assertEquals(actual, expt, message);
+		String expected = expt;
+		softassert.assertEquals(actual, expected , message);
 		softassert.assertAll();
 	
 	}
